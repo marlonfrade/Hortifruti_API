@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Produto</title>
+    <!-- CSS styles -->
+    <link rel="stylesheet" href="/style/style.css">
+    <!-- Google Font Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Editar Produto</h1>
+
+
+    <div class="container">
+        <form action="/products/<%= product._id %>?_method=PUT" method="POST">
+            <label for="name">Nome do Produto</label>
+            <input type="text" name="name" id="name" placeholder="Nome do Produto" value="<%= product.name %>">
+            <label for="price"> Preço Unidade</label>
+            <input type="number" name="price" id="price" placeholder="R$ Preço" value="<%= product.price %>">
+            <label for="category">Selecione a Categoria</label>
+            <select name="category" id="category">
+                <option value="frutas">frutas</option>
+                <option value="vegetais">vegetais</option>
+                <option value="hortaliças">hortaliças</option>
+            </select>
+
+            <button id="add">Alterar Item</button>
+        </form>
+        <a href="/products/<%=product._id%>" id="cancel">Cancelar</a>
+    </div>
+</body>
+
+</html>
